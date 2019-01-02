@@ -1,0 +1,17 @@
+.stash {
+    position: relative;
+    width: 50%;
+    min-width: 572px;
+    max-width: 572px;
+    min-height: 573px;
+    /*background-image: url('https://web.poecdn.com/image/gen/inventory/StashPanelGrid.png?1545338996000')*/
+    border:#e0e0e0 solid 1px;
+    padding-left:2px;
+}
+
+.stash .item {
+    position: absolute;
+
+    border:#e0e0e0 solid 1px;
+    background-color: #eaeaea;
+}
