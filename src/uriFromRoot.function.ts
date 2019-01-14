@@ -4,7 +4,6 @@ let callsite = require('callsite');
 class PathOptions {
     root: string
 }
-
 let pathOptions = new PathOptions();
 pathOptions.root = __dirname + "\\www";
 export default pathOptions;

@@ -1,0 +1,8 @@
+<div class="stash">
+	<% tab.stash.items.forEach(function (item) { %>
+		<img class="item"
+			 style="left: calc((23.75px * <%= item.x %>));
+					 top: calc((23.75px * <%= item.y %>));"
+			 src="<%= item.icon %>"/>
+	<% }) %>
+</div>

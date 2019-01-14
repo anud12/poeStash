@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Home</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/static/css/stash.css"/>
+</head>
+<body>
+<div class="container-fluid">
+	<div class="card-body">
+		<div class="card">
+			<a href="/" class="card-header text-center">
+				Path of exile stash viewer
+			</a>
+			<div class="card-header text-center">
+				Stash
+			</div>
+			<div class="">
+				<ul class="nav nav-tabs">
+					<% for(index in tab.tabs) {
+						const currentTab = tab.tabs[index];
+						const colour = currentTab.colour;
+						const selected = currentTab.selected ? "active" : "";
+					%>
+					<li class="nav-item">
+						<a class="nav-link <%= selected %>"
+						   href="/stash/<%= currentTab.i %>"
+						   style="color: rgb(<%= colour.r %>, <%= colour.g %>, <%= colour.b %>); filter:brightness(80%)">
+							<%= currentTab.n %>
+						</a>
+					</li>
+					<% } %>
+				</ul>
+				<div class="card-body">
+					<% if (tab.stash.type === "QuadStash") { %>
+						<%- include("quadStash.ejs", {stash: tab.stash}) %>
+					<% } else { %>
+						<%- include("stash.ejs", {stash: tab.stash}) %>
+					<% } %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,6 +1,8 @@
 .stash {
     position: relative;
     width: 50%;
+    margin-left: auto;
+    margin-right: auto;
     min-width: 572px;
     max-width: 572px;
     min-height: 573px;
